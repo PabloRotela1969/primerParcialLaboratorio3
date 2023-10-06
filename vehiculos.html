@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="funciones.js"></script>
+    <title>ABM VEHICULOS</title>
+</head>
+
+    <body>
+        <div id="cabecera" class="formulario">
+    
+            <h1>Form Datos</h1>
+            <br>
+            <label>Filtrar por</label>
+            <select id="columnas" class="custom-select" style="width:200px;" onchange="cargarGrilla();">
+                <option value="modelo">modelo</option>
+                <option value="anoFab">anoFab</option>
+                <option value="velMax">velMax</option>
+                <option value="cantPue">cantPue</option>
+                <option value="cantRue">cantRue</option>
+                <option value="altMax">altMax</option>
+                <option value="autonomia">autonomia</option>
+                <option value="todas">todas</option>
+            </select>
+            <br>
+            <label>Promedio Velocidad Máxima:</label>
+            <input type="text" id="edadPromedio" class="input-text">
+            <button id="btnCalcular" onclick="recorrerVector()" class="boton">Calcular</button>
+            <br>
+            <label>Mostrar columnas:</label>
+            <br>
+            
+            <input type="checkbox" id="id" onchange="cargarGrilla()" checked value="id">
+            <label for="id">id</label>
+            <input type="checkbox" id="modelo" onchange="cargarGrilla()" checked  value="modelo">
+            <label for="modelo">modelo</label>
+            <input type="checkbox" id="anoFab" onchange="cargarGrilla()" checked value="anoFab">
+            <label for="anoFab">anoFab</label>
+            <input type="checkbox" id="velMax" onchange="cargarGrilla()" checked  value="velMax">
+            <label for="velMax">velMax</label>
+            <input type="checkbox" id="cantPue" onchange="cargarGrilla()" checked value="cantPue">
+            <label for="cantPue">cantPue</label>
+            <input type="checkbox" id="cantRue" onchange="cargarGrilla()" checked value="cantRue">
+            <label for="cantRue">cantRue</label>
+            <input type="checkbox" id="altMax" onchange="cargarGrilla()" checked value="altMax">
+            <label for="altMax">altMax</label>
+            <input type="checkbox" id="autonomia" onchange="cargarGrilla()" checked value="autonomia">
+            <label for="autonomia">autonomia</label>
+    
+        </div>
+
+        <div id="principal" class="grilla" >
+    
+            <table id="tablaPrincipal"  >
+
+        
+            </table>
+        </div>
+        
+        <div id="botonABM" >
+
+        </div>
+
+        <div id="seccionABM" class="field_container" style="display: none;">
+            <label>Formulario de ABM</label>
+            <br>
+            <label for="abm.id" >id:</label>
+            <input type="text" id="abm.id" class="input-text">
+            <input type="hidden" id="abm.fila">
+            <br>
+            <label for="abm.modelo" >modelo:</label>
+            <input type="text" id="abm.modelo"   class="input-text">
+            <br>
+            <label for="abm.anoFab" >anoFab:</label>
+            <input type="text" id="abm.anoFab" class="input-text">
+            <br>
+            <label for="abm.velMax" >velMax:</label>
+            <input type="text" id="abm.velMax"  class="input-text">
+            <br>
+            <label for="abm.cantPue" >cantPue:</label>
+            <input type="text" id="abm.cantPue" class="input-text">
+            <br>
+            <label for="abm.cantRue" >cantRue:</label>
+            <input type="text" id="abm.cantRue" class="input-text">
+            <br>
+            <label for="abm.altMax" >altMax:</label>
+            <input type="text" id="abm.altMax" class="input-text">
+            <br>
+            <label for="abm.autonomia" >autonomia:</label>
+            <input type="text" id="abm.autonomia" class="input-text">
+            <br>
+            <button id="btnAlta" onclick="AgregarRegistroAVector()" class="boton">Alta</button>
+            <button id="btnBaja" onclick="BajaRegistroDeVector()" class="boton">Baja</button>
+            <button id="btnModificar" onclick="ModificarRegistroDeVector()" class="boton">Modificar</button>
+            <button id="btnLimpiar" onclick="LimpiarRegistroDeVector()" class="boton">Limpiar</button>
+            <button id="btnCancelar" onclick="mostrarSeccionPrincipal()" class="boton">Cancelar</button>
+        </div>
+                
+
+
+    
+    </body>
+
+</html>
